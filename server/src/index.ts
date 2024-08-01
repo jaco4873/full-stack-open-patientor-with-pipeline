@@ -30,8 +30,12 @@ app.get("/api/ping", (_req, res) => {
 app.use('/api/patients', patientsRouter);
 app.use('/api/diagnoses', diagnosisRouter);
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+export default app;
 
 /* eslint-enable @typescript-eslint/no-unsafe-call */
