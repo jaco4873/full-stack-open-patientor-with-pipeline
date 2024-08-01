@@ -3,4 +3,4 @@
 echo "Run script"
 
 cd server
-npm run start
+npm run start-prod
